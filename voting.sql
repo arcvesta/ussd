@@ -75,6 +75,7 @@ INSERT INTO `categories` (`name`) VALUES
 -- --------------------------------------------------------
 
 --
+--
 -- Table structure for table `voters`
 --
 
@@ -82,30 +83,26 @@ CREATE TABLE `voters` (
   `firstname` varchar(15) NOT NULL,
   `lastname` varchar(15) NOT NULL,
   `phone` varchar(15) NOT NULL,
-  `voted` varchar(7) NOT NULL,
-  `president` varchar(15) DEFAULT 'noone',
-  `governor` varchar(15) DEFAULT 'noone',
-  `senator` varchar(15) DEFAULT 'noone'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `voted` varchar(7) NOT NULL DEFAULT 'False',
+  `president` varchar(50) DEFAULT 'noone',
+  `governor` varchar(50) DEFAULT 'noone',
+  `senator` varchar(50) DEFAULT 'noone'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `voters`
 --
 
 INSERT INTO `voters` (`firstname`, `lastname`, `phone`, `voted`, `president`, `governor`, `senator`) VALUES
-('voter', 'three', '778765432', 'False', 'noone', 'noone', 'noone'),
+('voter', 'one', '798765432', 'False', 'noone', 'noone', 'noone'),
 ('voter', 'two', '788765432', 'False', 'noone', 'noone', 'noone'),
-('voter', 'one', '798765432', 'False', 'noone', 'noone', 'noone');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `voters`
---
-ALTER TABLE `voters`
-  ADD PRIMARY KEY (`phone`);
+('voter', 'three', '778765432', 'False', 'noone', 'noone', 'noone'),
+('voter', 'four', '254776487650', 'False', 'noone', 'noone', 'noone'),
+('voter', 'five', '+254773388655', 'True', 'one', 'one', 'one'),
+('qwerty', 'qwerty', '+254798765432', 'False', 'one', 'two', 'four'),
+('qwerty2', 'qwerty2', '+254798765431', 'False', 'noone', 'noone', 'noone'),
+('qwerty3', 'qwerty3', '+254798765433', 'False', 'three', 'two', 'one'),
+('qwerty4', 'qwerty4', '+254798765434', 'False', 'noone', 'noone', 'noone');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
